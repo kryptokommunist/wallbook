@@ -8,7 +8,7 @@ trendpausetime = 30 # pause time between trend view
 
 instagram = 'http://instagram.com/'
 models = ['barrefaeli','catmcneil','idafrosk','satiregram','nasagoddard','keepsy',]
-musicfile = "/home/kryptokommunist/Desktop/instagram.mp3" # file to be played during insta pic opened
+musicfile = "/home/kryptokommunist/Desktop/wallbook/instagram.mp3" # file to be played during insta pic opened
 instapausetime = 5 # pause time between clicking pics
 picsnum = 20 # number of insta pics to be clicked
 
