@@ -24,12 +24,12 @@ print 'lets go!'
 
 while(true) do
 
-	if(cntrcntr % 10 == 0) then
+	if(cntrcntr == 0) then
 
 		browser.goto instagram + models[modelcntr]
 		browser.send_keys :space
-		#pid = Process.spawn("timeout " + ((instapausetime + 1) * picsnum).to_s + " cvlc " + musicfile) # timeout kills process after given time
-		#Process.detach(pid)
+		pid = Process.spawn("timeout " + ((instapausetime + 1) * picsnum).to_s + " cvlc " + musicfile) # timeout kills process after given time
+		Process.detach(pid)
 		picsnum.times do |j|
 	
 			browser.links(:class => 'pgmiImageLink')[j].when_present.click
