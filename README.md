@@ -1,5 +1,5 @@
 # wallbook
-Files for creating an wall info display
+Files for creating an wall info display and script to make the system wake/sleep
 
 add something like the following with "sudo crontab -e" for automated sleep/startup to the cron table:
 
