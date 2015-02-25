@@ -7,7 +7,7 @@ countries = [0,30,8,44,41,18,13,38,32,43,49,29,50,16,15,48,10,45,
 trendpausetime = 30 # pause time between trend view
 
 instagram = 'http://instagram.com/'
-models = ['barrefaeli','catmcneil','idafrosk','satiregram','nasagoddard','keepsy',]
+models = ['awanderingphoto','barrefaeli','catmcneil','idafrosk','satiregram','nasagoddard','keepsy',]
 musicfile = "/home/kryptokommunist/Desktop/wallbook/instagram.mp3" # file to be played during insta pic opened
 instapausetime = 5 # pause time between clicking pics
 picsnum = 20 # number of insta pics to be clicked
