@@ -28,6 +28,7 @@ fi
 
 # Kill rtcwake if already running
 sudo killall rtcwake
+sudo killall ruby
 
 # Set RTC wakeup time
 # N.B. change "mem" for the suspend option

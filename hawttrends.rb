@@ -7,8 +7,9 @@ countries = [0,30,8,44,41,18,13,38,32,43,49,29,50,16,15,48,10,45,
 trendpausetime = 30 # pause time between trend view
 
 instagram = 'http://instagram.com/'
-models = ['awanderingphoto','barrefaeli','catmcneil','idafrosk','satiregram','nasagoddard','keepsy',]
-musicfile = "/home/kryptokommunist/Desktop/wallbook/instagram.mp3" # file to be played during insta pic opened
+putzplan = 'http://putzplaner.herokuapp.com/'
+models = ['wdwrk','drvdk','barrefaeli','catmcneil','idafrosk','satiregram','nasagoddard','keepsy',]
+musicfile = "/home/kryptokommunist/Desktop/instagram.mp3" # file to be played during insta pic opened
 instapausetime = 5 # pause time between clicking pics
 picsnum = 20 # number of insta pics to be clicked
 
@@ -17,6 +18,8 @@ modelcntr = 0 # model counter
 
 browser = Watir::Browser.new
 
+#browser.timeout = 60 somehow gives error message
+
 browser.goto 'http://hawttrends.appspot.com/?r=2&c=2'
 browser.send_keys :f11
 
@@ -24,7 +27,7 @@ print 'lets go!'
 
 while(true) do
 
-	if(cntrcntr % 10 == 0) then
+	if(cntrcntr % 2 == 0) then
 
 		browser.goto instagram + models[modelcntr]
 		browser.send_keys :space
@@ -41,6 +44,9 @@ while(true) do
 		modelcntr = 0 if (modelcntr == models.length)
 
 	end
+
+	browser.goto putzplan
+	sleep(150)
 
 	
 	browser.goto 'http://hawttrends.appspot.com/?r=2&c=2&p=' + countries[cntrcntr].to_s
