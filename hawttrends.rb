@@ -8,7 +8,7 @@ trendpausetime = 30 # pause time between trend view
 
 instagram = 'http://instagram.com/'
 putzplan = 'http://putzplaner.herokuapp.com/'
-models = ['wdwrk','drvdk','barrefaeli','catmcneil','idafrosk','satiregram','nasagoddard','keepsy',]
+models = ['wkwrd','drvdk','barrefaeli','catmcneil','idafrosk','satiregram','nasagoddard','keepsy',]
 musicfile = "/home/kryptokommunist/Desktop/instagram.mp3" # file to be played during insta pic opened
 instapausetime = 5 # pause time between clicking pics
 picsnum = 20 # number of insta pics to be clicked
@@ -34,16 +34,19 @@ while(true) do
 		#pid = Process.spawn("timeout " + ((instapausetime + 1) * picsnum).to_s + " cvlc " + musicfile) # timeout kills process after given time
 		#Process.detach(pid)
 		picsnum.times do |j|
-	
-			browser.links(:class => 'pgmiImageLink')[j].when_present.click
-			sleep(instapausetime)
-
+			begin
+				browser.links(:class => 'pgmiImageLink')[j].wait_until_present(timeout=3).click
+				sleep(instapausetime)
+			rescue
+				puts "Waited 3 seconds for nothing..."
+			end
 		end
 
 		modelcntr += 1
 		modelcntr = 0 if (modelcntr == models.length)
 
 	end
+
 
 	browser.goto putzplan
 	sleep(150)
